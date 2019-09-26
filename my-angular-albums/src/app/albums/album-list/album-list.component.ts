@@ -12,7 +12,7 @@ export class AlbumListComponent implements OnInit {
   albumsArray: Album[];
   clickedAlbum: string;
 
-  constructor(private albumService: AlbumService) { };
+  constructor(private albumService: AlbumService) { }
 
   ngOnInit(): void {
     this.getAlbums();
@@ -23,6 +23,9 @@ export class AlbumListComponent implements OnInit {
   }
 
   getAlbums() {
-    this.albumsArray = this.albumService.getAlbums();
+    this.albumService.getAlbums()
+    .subscribe(
+        albums => this.albumsArray = albums,
+        error => console.log("Error: ", error));
   }
 }
