@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { AlbumListComponent } from './albums/album-list/album-list.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AddAlbumComponent } from './albums/add-album/add-album.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
                         }),
   },
   { path: "add-album", component: AddAlbumComponent },
+  { path: "login", component: LoginComponent },
   { path: "**", component: NotfoundComponent, pathMatch: "full" }
 ];
 
