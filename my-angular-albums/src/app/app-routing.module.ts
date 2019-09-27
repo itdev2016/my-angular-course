@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AlbumListComponent } from './albums/album-list/album-list.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AddAlbumComponent } from './albums/add-album/add-album.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
                         return mod.AlbumsModule;
                         }),
   },
+  { path: "add-album", component: AddAlbumComponent },
   { path: "**", component: NotfoundComponent, pathMatch: "full" }
 ];
 

@@ -8,9 +8,13 @@ import { Album } from '../album.model';
 providedIn: 'root'
 })
 export class AlbumService {
-     url = "http://localhost:3334/albums";
 
      constructor(private http: HttpClient) { }
+     url = "http://localhost:3334/albums";
+
+     addAlbum(album: Album): Observable<Album> {
+          return this.http.post<Album>(this.url, album);
+        }
 
      getAlbums(): Observable<Album[]> {
           return this.http.get<Album[]>(this.url);
